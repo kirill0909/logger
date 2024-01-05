@@ -17,12 +17,12 @@ func InitLogger() *Logger {
 	return &Logger{}
 }
 
-func (l *Logger) Infof(message string, args ...any) {
+func (l *Logger) Infof(message string, args ...interface{}) {
 	formatedMessage := fmt.Sprintf(message, args...)
 	fmt.Printf("%s %s [INFO] %s %s\n", getFormatedTime(), Green, Reset, formatedMessage)
 }
 
-func (l *Logger) Errorf(message string, args ...any) {
+func (l *Logger) Errorf(message string, args ...interface{}) {
 	formatedMessage := fmt.Sprintf(message, args...)
 	fmt.Printf("%s %s [ERROR] %s %s\n", getFormatedTime(), Red, Reset, formatedMessage)
 }
